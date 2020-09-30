@@ -1,0 +1,24 @@
+.main {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.main > div.left-side {
+    /* height: 100vh; */
+}
+
+.main > div.center-side {
+    position: relative;
+    /* height: 100vh; */
+    padding: 1.1em;
+}
+
+.main > div.right-side {
+    /* height: 100vh; */
+}
+
+.centered {
+    align-items: center;
+    top: 50%;
+}

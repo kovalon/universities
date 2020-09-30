@@ -1,0 +1,17 @@
+{% extends "app/basic.html" %}
+
+{% block title %}
+    <title>Start page</title>
+{% endblock title %}
+
+{% block content %}
+    <h1>Welcome to start page of University statistics site</h1>
+{% if user.is_authenticated %}
+    <form action="/app/universities/" style="align-items: center; top: 50%;">
+        <button class="btn btn-primary btn-lg">View universities</button>
+    </form>
+{% else %}
+    <p>You must authenticate before you surf on web pages</p>
+{% endif %}
+
+{% endblock content %}

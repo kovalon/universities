@@ -1,0 +1,38 @@
+{% extends "app/basic.html" %}
+
+{% block title %}
+    <title>{{ university.name }} page</title>
+{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h1>{{ university.name }}</h1>
+    <form>
+      <fieldset disabled>
+        <div class="form-group">
+          <label for="nameField">Name</label>
+          <input type="text" id="nameField" class="form-control" placeholder="{{ university.name }}">
+        </div>
+        <div class="form-group">
+          <label for="addressField">Name</label>
+          <input type="text" id="addressField" class="form-control" placeholder="{{ university.address }}">
+        </div>
+        <div class="form-group">
+          <label for="subjectsField">Name</label>
+          <textarea id="subjectsField" class="form-control">{{ university.subjects }}
+          </textarea>
+        </div>
+      </fieldset>
+    </form>
+    <br/>
+    <form action="/app/delete_university/{{ university.id }}" method="get">
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+    <form action="/app/universities/" method="get">
+        <button type="submit" class="btn btn-primary">Back</button>
+    </form>
+{% else %}
+    <p>You must authenticate before you surf on web pages</p>
+{% endif %}
+
+{% endblock content %}
